@@ -11,6 +11,10 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
@@ -24,7 +28,10 @@
       margin: 0 auto;
     }
 
-    /* HERO */
+
+    /* =========================
+       HERO
+       ========================= */
 
     .hero {
       min-height: 90vh;
@@ -35,7 +42,7 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.15fr .85fr;
+      grid-template-columns: 1.15fr 0.85fr;
       gap: 70px;
       align-items: center;
     }
@@ -79,6 +86,11 @@
       border-radius: 4px;
       text-decoration: none;
       font-weight: 600;
+      transition: opacity 0.2s ease;
+    }
+
+    .contact-button:hover {
+      opacity: 0.85;
     }
 
     .hero-photo {
@@ -87,9 +99,13 @@
       object-fit: cover;
       border-radius: 4px;
       background: #DCE7E9;
+      display: block;
     }
 
-    /* SECTIONS */
+
+    /* =========================
+       GENERAL SECTIONS
+       ========================= */
 
     section {
       padding: 100px 0;
@@ -111,6 +127,11 @@
       letter-spacing: -1.5px;
     }
 
+
+    /* =========================
+       PHILOSOPHY
+       ========================= */
+
     .philosophy {
       max-width: 800px;
     }
@@ -124,7 +145,7 @@
 
     .philosophy p {
       font-size: 19px;
-      color: #4f5357;
+      color: #4F5357;
       margin-bottom: 20px;
     }
 
@@ -134,10 +155,18 @@
       margin-top: 30px;
     }
 
-    /* IMPACT */
+
+    /* =========================
+       IMPACT HIGHLIGHTS
+       ========================= */
 
     .impact {
       background: #FFFFFF;
+    }
+
+    .impact-intro {
+      max-width: 760px;
+      margin-bottom: 55px;
     }
 
     .impact-grid {
@@ -168,13 +197,290 @@
 
     .impact-context {
       font-size: 13px;
-      color: #6a6e72;
+      color: #6A6E72;
       line-height: 1.4;
     }
 
-    /* MOBILE */
+
+    /* =========================
+       TRANSFORMATION IN ACTION
+       ========================= */
+
+    .transformation {
+      background: #F7F7F5;
+    }
+
+    .section-intro {
+      max-width: 800px;
+      margin-bottom: 55px;
+    }
+
+    .section-intro p {
+      font-size: 20px;
+      color: #5F6368;
+      margin: 0;
+    }
+
+    .case-study {
+      background: #FFFFFF;
+      padding: 45px;
+      margin-bottom: 30px;
+      border-left: 4px solid #1F4E5F;
+    }
+
+    .case-number {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #1F4E5F;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .case-study h3 {
+      font-size: 30px;
+      line-height: 1.2;
+      margin: 0 0 8px;
+      letter-spacing: -0.8px;
+    }
+
+    .case-subtitle {
+      font-size: 19px;
+      color: #6A6E72;
+      font-style: italic;
+      margin-bottom: 30px;
+    }
+
+    .case-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px;
+    }
+
+    .case-block h4 {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: #1F4E5F;
+      margin: 0 0 8px;
+    }
+
+    .case-block p {
+      font-size: 17px;
+      color: #44484C;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .case-impact {
+      grid-column: 1 / -1;
+      border-top: 1px solid #D9DDDE;
+      padding-top: 25px;
+      margin-top: 5px;
+    }
+
+    .case-impact p {
+      font-size: 20px;
+      font-weight: 600;
+      color: #171717;
+    }
+
+    .case-closing {
+      font-size: 19px;
+      font-style: italic;
+      color: #1F4E5F;
+      margin-top: 25px !important;
+    }
+
+
+    /* =========================
+       HOW I LEAD
+       ========================= */
+
+    .lead-section {
+      background: #FFFFFF;
+    }
+
+    .lead-intro {
+      max-width: 800px;
+      margin-bottom: 55px;
+    }
+
+    .lead-intro p {
+      font-size: 19px;
+      color: #5F6368;
+      margin: 0;
+    }
+
+    .lead-principles {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 35px 60px;
+    }
+
+    .lead-principle {
+      border-top: 2px solid #1F4E5F;
+      padding-top: 20px;
+    }
+
+    .lead-principle h3 {
+      font-size: 22px;
+      margin: 0 0 10px;
+      letter-spacing: -0.3px;
+    }
+
+    .lead-principle p {
+      font-size: 17px;
+      color: #555A5E;
+      margin: 0;
+      line-height: 1.55;
+    }
+
+
+    /* =========================
+       EXPERIENCE
+       ========================= */
+
+    .experience {
+      background: #F7F7F5;
+    }
+
+    .experience-intro {
+      max-width: 760px;
+      margin-bottom: 50px;
+    }
+
+    .experience-intro p {
+      font-size: 19px;
+      color: #5F6368;
+    }
+
+    .experience-item {
+      padding: 35px 0;
+      border-top: 1px solid #D9DDDE;
+    }
+
+    .experience-item:last-child {
+      border-bottom: 1px solid #D9DDDE;
+    }
+
+    .experience-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 10px;
+    }
+
+    .experience-title {
+      font-size: 23px;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .experience-company {
+      font-size: 16px;
+      color: #1F4E5F;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .experience-date {
+      font-size: 15px;
+      color: #6A6E72;
+      white-space: nowrap;
+    }
+
+    .experience-item p {
+      font-size: 17px;
+      color: #555A5E;
+      max-width: 800px;
+      margin: 0;
+    }
+
+
+    /* =========================
+       EDUCATION
+       ========================= */
+
+    .education {
+      background: #FFFFFF;
+    }
+
+    .education-card {
+      max-width: 800px;
+      border-top: 2px solid #1F4E5F;
+      padding-top: 25px;
+    }
+
+    .education-card h3 {
+      font-size: 26px;
+      margin: 0 0 8px;
+    }
+
+    .education-card p {
+      font-size: 18px;
+      color: #5F6368;
+      margin: 5px 0;
+    }
+
+
+    /* =========================
+       CONTACT
+       ========================= */
+
+    .contact {
+      background: #1F4E5F;
+      color: #FFFFFF;
+      text-align: center;
+    }
+
+    .contact .section-label {
+      color: #DCE7E9;
+    }
+
+    .contact h2 {
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .contact p {
+      font-size: 19px;
+      color: #DCE7E9;
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+
+    .contact-email {
+      display: inline-block;
+      color: #FFFFFF;
+      font-size: 20px;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.6);
+      padding-bottom: 3px;
+    }
+
+
+    /* =========================
+       FOOTER
+       ========================= */
+
+    footer {
+      background: #171717;
+      color: #AEB3B6;
+      padding: 25px 0;
+      font-size: 13px;
+      text-align: center;
+    }
+
+
+    /* =========================
+       MOBILE
+       ========================= */
 
     @media (max-width: 800px) {
+
       .hero {
         min-height: auto;
         padding: 70px 0;
@@ -192,66 +498,129 @@
       .impact-grid {
         grid-template-columns: 1fr 1fr;
       }
+
+      .case-study {
+        padding: 30px;
+      }
+
+      .case-content {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .case-impact {
+        grid-column: auto;
+      }
+
+      .lead-principles {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .experience-header {
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      .experience-date {
+        white-space: normal;
+      }
+
     }
 
+
     @media (max-width: 500px) {
-      .impact-grid {
-        grid-template-columns: 1fr;
-      }
 
       section {
         padding: 70px 0;
       }
+
+      .impact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .case-study h3 {
+        font-size: 26px;
+      }
+
+      .philosophy-lead {
+        font-size: 26px;
+      }
+
     }
+
   </style>
 </head>
 
+
 <body>
 
-  <!-- HERO -->
+
+  <!-- =========================
+       HERO
+       ========================= -->
 
   <header class="hero">
+
     <div class="container hero-grid">
 
       <div>
-        <div class="eyebrow">Operations & Analytics Leader</div>
 
-        <h1>Adam Freedman</h1>
+        <div class="eyebrow">
+          Operations &amp; Analytics Leader
+        </div>
+
+        <h1>
+          Adam Freedman
+        </h1>
 
         <div class="expertise">
-          Decision Systems | Forecasting | Workforce Planning | Control Analytics | Reengineering
+          Decision Systems | Forecasting | Workforce Planning | Control Analytics
         </div>
 
         <div class="tagline">
           I don’t just build analytics. I design decision systems.
         </div>
 
-        <a class="contact-button"
-           href="mailto:adfreedman@gmail.com">
+        <a
+          class="contact-button"
+          href="mailto:adfreedman@gmail.com">
           Contact Me
         </a>
+
       </div>
 
-      <!-- Replace this image with your professional photo later -->
+
       <div>
+
         <img
           class="hero-photo"
           src="adam-freedman.png"
-          alt="Adam Freedman portrait">
+          alt="Adam Freedman">
+
       </div>
 
     </div>
+
   </header>
 
 
-  <!-- PHILOSOPHY -->
+
+  <!-- =========================
+       HOW I THINK
+       ========================= -->
 
   <section>
+
     <div class="container philosophy">
 
-      <div class="section-label">How I Think</div>
+      <div class="section-label">
+        How I Think
+      </div>
 
-      <h2>Better decisions don’t always require more analytics.</h2>
+      <h2>
+        Better decisions don’t always require more analytics.
+      </h2>
 
       <div class="philosophy-lead">
         Most operational performance problems are not data problems—they’re decision-system design problems.
@@ -274,74 +643,669 @@
       </div>
 
     </div>
+
   </section>
 
 
-  <!-- IMPACT -->
+
+  <!-- =========================
+       IMPACT HIGHLIGHTS
+       ========================= -->
 
   <section class="impact">
+
     <div class="container">
 
-      <div class="section-label">Impact Highlights</div>
+      <div class="section-label">
+        Impact Highlights
+      </div>
 
-      <h2>Measurable outcomes at scale.</h2>
+      <div class="impact-intro">
+
+        <h2>
+          Measurable outcomes at scale.
+        </h2>
+
+      </div>
+
 
       <div class="impact-grid">
 
+
         <div class="impact-item">
-          <div class="impact-number">43</div>
+
+          <div class="impact-number">
+            43
+          </div>
+
           <div class="impact-description">
             ML models deployed in first 12 months
           </div>
+
           <div class="impact-context">
-            American Express — Forecasting & ML Center of Excellence
+            American Express — Forecasting &amp; ML Center of Excellence
           </div>
+
         </div>
 
+
         <div class="impact-item">
-          <div class="impact-number">500+</div>
+
+          <div class="impact-number">
+            500+
+          </div>
+
           <div class="impact-description">
             Hours of monthly resource effort reduced
           </div>
+
           <div class="impact-context">
             Multiple leadership roles
           </div>
+
         </div>
 
+
         <div class="impact-item">
-          <div class="impact-number">$850M</div>
+
+          <div class="impact-number">
+            $850M
+          </div>
+
           <div class="impact-description">
             Annual OPEX supported through forecasting
           </div>
+
           <div class="impact-context">
             American Express — Global Forecasting
           </div>
+
         </div>
 
+
         <div class="impact-item">
-          <div class="impact-number">55M</div>
+
+          <div class="impact-number">
+            55M
+          </div>
+
           <div class="impact-description">
             Annual demand units supported through forecasting
           </div>
+
           <div class="impact-context">
             American Express — Global Forecasting
           </div>
+
         </div>
 
+
         <div class="impact-item">
-          <div class="impact-number">600+</div>
+
+          <div class="impact-number">
+            600+
+          </div>
+
           <div class="impact-description">
             Regulatory and procedural monitoring tests supported
           </div>
+
           <div class="impact-context">
             American Express — Control Management
           </div>
+
         </div>
+
 
       </div>
 
     </div>
+
   </section>
+
+
+
+  <!-- =========================
+       TRANSFORMATION IN ACTION
+       ========================= -->
+
+  <section class="transformation">
+
+    <div class="container">
+
+      <div class="section-label">
+        Transformation in Action
+      </div>
+
+      <div class="section-intro">
+
+        <h2>
+          How I turn complex operational problems into better decisions and simpler ways of working.
+        </h2>
+
+      </div>
+
+
+
+      <!-- CASE STUDY 1 -->
+
+      <article class="case-study">
+
+        <div class="case-number">
+          01 — From Proof of Concept to Enterprise Capability
+        </div>
+
+        <h3>
+          Turning forecasting variability into a scalable machine-learning capability
+        </h3>
+
+        <div class="case-subtitle">
+          From a focused proof of concept to an enterprise capability.
+        </div>
+
+
+        <div class="case-content">
+
+
+          <div class="case-block">
+
+            <h4>
+              Challenge
+            </h4>
+
+            <p>
+              Forecasting performance varied significantly across domains,
+              creating an opportunity to improve consistency and decision quality.
+            </p>
+
+          </div>
+
+
+          <div class="case-block">
+
+            <h4>
+              Approach
+            </h4>
+
+            <p>
+              I led a machine-learning proof of concept focused on
+              new-acquisition forecasting in the United Kingdom and Mexico.
+              The results demonstrated the potential of the approach and led
+              to an expanded mandate to build a Machine Learning Center of
+              Excellence from scratch.
+            </p>
+
+          </div>
+
+
+          <div class="case-block case-impact">
+
+            <h4>
+              Impact
+            </h4>
+
+            <p>
+              The Center of Excellence deployed
+              <strong>43 machine-learning models in its first 12 months.</strong>
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </article>
+
+
+
+      <!-- CASE STUDY 2 -->
+
+      <article class="case-study">
+
+        <div class="case-number">
+          02 — Simplifying Before Automating
+        </div>
+
+        <h3>
+          Removing complexity instead of automating it
+        </h3>
+
+        <div class="case-subtitle">
+          Sometimes the best transformation is removing something that doesn’t add value.
+        </div>
+
+
+        <div class="case-content">
+
+
+          <div class="case-block">
+
+            <h4>
+              Challenge
+            </h4>
+
+            <p>
+              A process was being prepared for automation, but one existing
+              step would have added unnecessary complexity.
+            </p>
+
+          </div>
+
+
+          <div class="case-block">
+
+            <h4>
+              Approach
+            </h4>
+
+            <p>
+              Rather than automate the existing process as-is, I challenged
+              whether the step created enough value to justify keeping it.
+            </p>
+
+          </div>
+
+
+          <div class="case-block case-impact">
+
+            <h4>
+              Impact
+            </h4>
+
+            <p>
+              The step was eliminated, simplifying the process and reducing
+              approximately <strong>35 hours of monthly effort.</strong>
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </article>
+
+
+
+      <!-- CASE STUDY 3 -->
+
+      <article class="case-study">
+
+        <div class="case-number">
+          03 — Deciding with Imperfect Information
+        </div>
+
+        <h3>
+          Making the best decision with the information available
+        </h3>
+
+        <div class="case-subtitle">
+          Good decisions do not require perfect information.
+        </div>
+
+
+        <div class="case-content">
+
+
+          <div class="case-block">
+
+            <h4>
+              Challenge
+            </h4>
+
+            <p>
+              Forecasting drivers were inconsistent and conflicting during
+              an annual planning cycle.
+            </p>
+
+          </div>
+
+
+          <div class="case-block">
+
+            <h4>
+              Approach
+            </h4>
+
+            <p>
+              I aligned stakeholders around the best forecast supported by
+              the information available at the time. When the underlying
+              drivers became clearer three months later, I communicated the
+              implications and recommended a re-forecast.
+            </p>
+
+          </div>
+
+
+          <div class="case-block case-impact">
+
+            <h4>
+              Impact
+            </h4>
+
+            <p>
+              The updated forecast identified approximately
+              <strong>30 incremental FTE and $2M in incremental operating expense.</strong>
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       HOW I LEAD
+       ========================= -->
+
+  <section class="lead-section">
+
+    <div class="container">
+
+      <div class="section-label">
+        How I Lead
+      </div>
+
+
+      <div class="lead-intro">
+
+        <h2>
+          Create clarity. Build trust. Develop people. Deliver results.
+        </h2>
+
+        <p>
+          I’ve led teams ranging from 6 to 30, and my leadership approach
+          remains consistent regardless of team size.
+        </p>
+
+      </div>
+
+
+      <div class="lead-principles">
+
+
+        <div class="lead-principle">
+
+          <h3>
+            Listen &amp; Learn
+          </h3>
+
+          <p>
+            Understand the team, customers, stakeholders, and environment
+            before deciding what needs to change.
+          </p>
+
+        </div>
+
+
+        <div class="lead-principle">
+
+          <h3>
+            Create Clarity
+          </h3>
+
+          <p>
+            Connect the work to the desired results so people understand
+            <strong>why the work matters.</strong>
+          </p>
+
+        </div>
+
+
+        <div class="lead-principle">
+
+          <h3>
+            Be Transparent
+          </h3>
+
+          <p>
+            Tell people what they need to hear—not simply what they want
+            to hear—and communicate intentionally.
+          </p>
+
+        </div>
+
+
+        <div class="lead-principle">
+
+          <h3>
+            Develop People
+          </h3>
+
+          <p>
+            Understand individual goals and create opportunities for
+            development, exposure, and recognition.
+          </p>
+
+        </div>
+
+
+        <div class="lead-principle">
+
+          <h3>
+            Build Followership
+          </h3>
+
+          <p>
+            Create alignment around a clear vision and roadmap so people
+            choose to move with the organization rather than simply being
+            directed.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       EXPERIENCE
+       ========================= -->
+
+  <section class="experience">
+
+    <div class="container">
+
+      <div class="section-label">
+        Experience
+      </div>
+
+      <div class="experience-intro">
+
+        <h2>
+          A career built around better decisions.
+        </h2>
+
+        <p>
+          My career has consistently centered on helping organizations
+          navigate complexity, improve decision quality, and execute change.
+        </p>
+
+      </div>
+
+
+      <div class="experience-item">
+
+        <div class="experience-header">
+
+          <h3 class="experience-title">
+            Director, Reporting &amp; Analytics — Control Management
+          </h3>
+
+          <div class="experience-date">
+            American Express
+          </div>
+
+        </div>
+
+        <div class="experience-company">
+          American Express
+        </div>
+
+        <p>
+          Lead reporting, analytics, control analytics, monitoring, and
+          decision-support activities across a global organization.
+        </p>
+
+      </div>
+
+
+      <div class="experience-item">
+
+        <div class="experience-header">
+
+          <h3 class="experience-title">
+            Global Forecasting Leadership
+          </h3>
+
+          <div class="experience-date">
+            American Express
+          </div>
+
+        </div>
+
+        <div class="experience-company">
+          American Express — Global Forecasting
+        </div>
+
+        <p>
+          Led forecasting activities supporting significant operational
+          demand and annual operating expense, with a focus on improving
+          forecast quality and decision-making.
+        </p>
+
+      </div>
+
+
+      <div class="experience-item">
+
+        <div class="experience-header">
+
+          <h3 class="experience-title">
+            Machine Learning Center of Excellence
+          </h3>
+
+          <div class="experience-date">
+            American Express
+          </div>
+
+        </div>
+
+        <div class="experience-company">
+          American Express — Forecasting &amp; ML
+        </div>
+
+        <p>
+          Expanded from forecasting into machine-learning leadership,
+          building a Center of Excellence from scratch and deploying
+          machine-learning models across multiple domains.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       EDUCATION
+       ========================= -->
+
+  <section class="education">
+
+    <div class="container">
+
+      <div class="section-label">
+        Education
+      </div>
+
+      <h2>
+        Continuous learning.
+      </h2>
+
+
+      <div class="education-card">
+
+        <h3>
+          Master of Science in Analytics
+        </h3>
+
+        <p>
+          Georgia Institute of Technology
+        </p>
+
+        <p>
+          Focus: Analytics
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       CONTACT
+       ========================= -->
+
+  <section class="contact">
+
+    <div class="container">
+
+      <div class="section-label">
+        Contact
+      </div>
+
+      <h2>
+        Let’s build better decision systems.
+      </h2>
+
+      <p>
+        I’m interested in conversations about operations, analytics,
+        transformation, leadership, and the design of better decision systems.
+      </p>
+
+      <a
+        class="contact-email"
+        href="mailto:adfreedman@gmail.com">
+        adfreedman@gmail.com
+      </a>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       FOOTER
+       ========================= -->
+
+  <footer>
+
+    <div class="container">
+      Adam Freedman &nbsp;·&nbsp; Operations &amp; Analytics Leader
+    </div>
+
+  </footer>
+
 
 </body>
 </html>
