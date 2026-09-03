@@ -7,68 +7,71 @@
   <title>Adam Freedman | Operations & Analytics Leader</title>
 
   <style>
-
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
     }
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 90px;
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #F7F7F5;
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
       color: #171717;
+      background: #F7F7F5;
       line-height: 1.6;
     }
 
-    a {
-      color: inherit;
+    .container {
+      width: min(1100px, 90%);
+      margin: 0 auto;
     }
 
-    /* =========================
-       NAVIGATION
-    ========================= */
 
-    nav {
+    /* =========================
+       STICKY NAVIGATION
+       ========================= */
+
+    .site-nav {
       position: sticky;
       top: 0;
       z-index: 1000;
       background: rgba(247, 247, 245, 0.96);
-      border-bottom: 1px solid #E5E5E2;
+      border-bottom: 1px solid #D9DDDE;
       backdrop-filter: blur(8px);
     }
 
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 16px 32px;
+    .nav-inner {
+      min-height: 64px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
+      gap: 30px;
     }
 
-    .nav-name {
-      font-weight: 700;
-      color: #1F4E5F;
+    .nav-brand {
+      color: #171717;
       text-decoration: none;
+      font-weight: 700;
+      font-size: 17px;
+      white-space: nowrap;
     }
 
     .nav-links {
       display: flex;
-      gap: 24px;
-      list-style: none;
-      flex-wrap: wrap;
+      align-items: center;
       justify-content: flex-end;
+      gap: 24px;
+      flex-wrap: wrap;
     }
 
     .nav-links a {
+      color: #4F5357;
       text-decoration: none;
       font-size: 14px;
-      color: #444;
+      font-weight: 600;
       transition: color 0.2s ease;
     }
 
@@ -76,88 +79,55 @@
       color: #1F4E5F;
     }
 
-    /* =========================
-       GENERAL
-    ========================= */
-
-    section {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 100px 32px;
-    }
-
-    .section-label {
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: #1F4E5F;
-      margin-bottom: 18px;
-    }
-
-    h2 {
-      font-size: 42px;
-      line-height: 1.15;
-      margin-bottom: 28px;
-      letter-spacing: -1px;
-    }
-
-    h3 {
-      font-size: 22px;
-      line-height: 1.3;
-      margin-bottom: 12px;
-    }
-
-    p {
-      font-size: 17px;
-      color: #444;
-      max-width: 780px;
-    }
 
     /* =========================
        HERO
-    ========================= */
+       ========================= */
 
     .hero {
-      max-width: 1200px;
-      min-height: 720px;
-      margin: 0 auto;
-      padding: 100px 32px;
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      padding: 80px 0;
+      scroll-margin-top: 80px;
+    }
+
+    .hero-grid {
       display: grid;
-      grid-template-columns: 1.35fr 0.65fr;
+      grid-template-columns: 1.15fr 0.85fr;
       gap: 70px;
       align-items: center;
     }
 
-    .hero-eyebrow {
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 2px;
+    .eyebrow {
+      font-size: 15px;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
       color: #1F4E5F;
-      margin-bottom: 20px;
+      font-weight: 600;
+      margin-bottom: 18px;
     }
 
-    .hero h1 {
-      font-size: 72px;
-      line-height: 1;
-      letter-spacing: -3px;
-      margin-bottom: 28px;
+    h1 {
+      font-size: clamp(46px, 7vw, 78px);
+      line-height: 1.05;
+      margin: 0 0 24px;
+      letter-spacing: -2.5px;
+      font-weight: 700;
     }
 
-    .hero-expertise {
-      font-size: 30px;
-      line-height: 1.3;
-      max-width: 760px;
-      color: #292929;
-      margin-bottom: 22px;
+    .expertise {
+      font-size: 20px;
+      color: #5F6368;
+      margin-bottom: 32px;
     }
 
-    .hero-tagline {
-      font-size: 15px;
-      color: #666;
-      margin-bottom: 34px;
-      letter-spacing: 0.3px;
+    .tagline {
+      font-size: clamp(25px, 3vw, 36px);
+      line-height: 1.25;
+      font-weight: 600;
+      max-width: 650px;
+      margin-bottom: 38px;
     }
 
     .hero-actions {
@@ -167,11 +137,23 @@
       flex-wrap: wrap;
     }
 
-    /* =========================
-       BUTTONS
-    ========================= */
+    .contact-button {
+      display: inline-block;
+      background: transparent;
+      color: #1F4E5F;
+      border: 1px solid #1F4E5F;
+      padding: 12px 22px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
 
-    .contact-button,
+    .contact-button:hover {
+      background: #1F4E5F;
+      color: white;
+    }
+
     .linkedin-button {
       display: inline-block;
       background: transparent;
@@ -184,350 +166,546 @@
       transition: all 0.2s ease;
     }
 
-    .contact-button:hover,
     .linkedin-button:hover {
       background: #1F4E5F;
       color: white;
     }
 
-    .hero-image {
-      display: flex;
-      justify-content: center;
-    }
-
-    .hero-image img {
+    .hero-photo {
       width: 100%;
-      max-width: 330px;
-      height: auto;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      border-radius: 4px;
+      background: #DCE7E9;
       display: block;
     }
 
-    /* =========================
-       HOW I THINK
-    ========================= */
-
-    .think-content {
-      max-width: 850px;
-    }
-
-    .think-content p {
-      margin-bottom: 22px;
-    }
-
-    .think-close {
-      font-size: 21px;
-      font-weight: 600;
-      color: #1F4E5F;
-      margin-top: 35px;
-    }
 
     /* =========================
-       WHAT I SOLVE
-    ========================= */
+       GENERAL SECTIONS
+       ========================= */
 
-    .solve-intro {
-      margin-bottom: 55px;
+    section {
+      padding: 100px 0;
     }
 
-    .solve-keywords {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin: 28px 0 55px;
-    }
-
-    .solve-keywords span {
-      border: 1px solid #D8D8D4;
-      padding: 9px 15px;
+    .section-label {
       font-size: 14px;
-      color: #555;
-      background: #fff;
-    }
-
-    .solve-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 50px 70px;
-    }
-
-    .solve-item p {
-      font-size: 16px;
-    }
-
-    /* =========================
-       IMPACT
-    ========================= */
-
-    .impact-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 50px;
-      margin-top: 55px;
-    }
-
-    .impact-number {
-      font-size: 48px;
-      line-height: 1;
-      font-weight: 700;
-      color: #1F4E5F;
-      margin-bottom: 12px;
-    }
-
-    .impact-description {
-      font-size: 16px;
-      color: #444;
-    }
-
-    .impact-source {
-      display: block;
-      font-size: 13px;
-      color: #777;
-      margin-top: 7px;
-    }
-
-    /* =========================
-       TRANSFORMATION
-    ========================= */
-
-    .case-study {
-      border-top: 1px solid #DCDCD8;
-      padding-top: 38px;
-      margin-top: 45px;
-    }
-
-    .case-number {
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      color: #1F4E5F;
       text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-
-    .case-study p {
-      max-width: 850px;
-      margin-bottom: 18px;
-    }
-
-    .case-result {
-      font-weight: 600;
-      color: #1F4E5F;
-    }
-
-    /* =========================
-       HOW I LEAD
-    ========================= */
-
-    .lead-intro {
-      font-size: 22px;
-      max-width: 800px;
-      margin-bottom: 55px;
-    }
-
-    .lead-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 50px;
-    }
-
-    .lead-number {
-      font-size: 13px;
-      font-weight: 700;
-      color: #1F4E5F;
       letter-spacing: 1.5px;
-      margin-bottom: 12px;
-    }
-
-    .lead-item p {
-      font-size: 16px;
-    }
-
-    /* =========================
-       EXPERIENCE
-    ========================= */
-
-    .experience-intro {
-      margin-bottom: 50px;
-    }
-
-    .experience-item {
-      border-top: 1px solid #DCDCD8;
-      padding: 32px 0;
-    }
-
-    .experience-item:last-child {
-      border-bottom: 1px solid #DCDCD8;
-    }
-
-    .experience-role {
-      font-size: 22px;
-      font-weight: 700;
-      margin-bottom: 5px;
-    }
-
-    .experience-company {
       color: #1F4E5F;
       font-weight: 600;
       margin-bottom: 15px;
     }
 
-    .experience-item p {
-      font-size: 16px;
+    h2 {
+      font-size: clamp(34px, 5vw, 52px);
+      line-height: 1.1;
+      margin: 0 0 35px;
+      letter-spacing: -1.5px;
     }
+
+
+    /* =========================
+       HOW I THINK
+       ========================= */
+
+    .philosophy {
+      max-width: 800px;
+    }
+
+    .philosophy-lead {
+      font-size: 30px;
+      line-height: 1.3;
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
+
+    .philosophy p {
+      font-size: 19px;
+      color: #4F5357;
+      margin-bottom: 20px;
+    }
+
+    .closing-line {
+      font-size: 21px;
+      font-weight: 600;
+      margin-top: 30px;
+    }
+
+
+    /* =========================
+       WHAT I SOLVE
+       ========================= */
+
+    .solve-section {
+      background: #FFFFFF;
+    }
+
+    .solve-intro {
+      max-width: 820px;
+      margin-bottom: 55px;
+    }
+
+    .solve-intro p {
+      font-size: 20px;
+      color: #4F5357;
+      margin: 0 0 24px;
+    }
+
+    .solve-transfer {
+      font-size: 29px !important;
+      line-height: 1.3;
+      font-weight: 600;
+      color: #171717 !important;
+      margin-top: 30px !important;
+      margin-bottom: 20px !important;
+    }
+
+    .solve-context {
+      font-size: 19px !important;
+      color: #555A5E !important;
+    }
+
+    .solve-keywords {
+      font-size: 22px !important;
+      line-height: 1.45;
+      font-weight: 600;
+      color: #1F4E5F !important;
+      margin-top: 25px !important;
+    }
+
+    .solve-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 35px 60px;
+    }
+
+    .solve-item {
+      border-top: 2px solid #1F4E5F;
+      padding-top: 20px;
+    }
+
+    .solve-item h3 {
+      font-size: 23px;
+      margin: 0 0 10px;
+      letter-spacing: -0.3px;
+    }
+
+    .solve-item p {
+      font-size: 17px;
+      color: #555A5E;
+      margin: 0;
+      line-height: 1.55;
+    }
+
+
+    /* =========================
+       IMPACT HIGHLIGHTS
+       ========================= */
+
+    .impact {
+      background: #F7F7F5;
+    }
+
+    .impact-intro {
+      max-width: 760px;
+      margin-bottom: 55px;
+    }
+
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 25px;
+    }
+
+    .impact-item {
+      padding-top: 20px;
+      border-top: 2px solid #1F4E5F;
+    }
+
+    .impact-number {
+      font-size: 42px;
+      font-weight: 700;
+      letter-spacing: -1px;
+      color: #1F4E5F;
+      margin-bottom: 8px;
+    }
+
+    .impact-description {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.35;
+      margin-bottom: 12px;
+    }
+
+    .impact-context {
+      font-size: 13px;
+      color: #6A6E72;
+      line-height: 1.4;
+    }
+
+
+    /* =========================
+       TRANSFORMATION IN ACTION
+       ========================= */
+
+    .transformation {
+      background: #FFFFFF;
+    }
+
+    .section-intro {
+      max-width: 800px;
+      margin-bottom: 55px;
+    }
+
+    .section-intro p {
+      font-size: 20px;
+      color: #5F6368;
+      margin: 0;
+    }
+
+    .case-study {
+      background: #F7F7F5;
+      padding: 45px;
+      margin-bottom: 30px;
+      border-left: 4px solid #1F4E5F;
+    }
+
+    .case-number {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #1F4E5F;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .case-study h3 {
+      font-size: 30px;
+      line-height: 1.2;
+      margin: 0 0 8px;
+      letter-spacing: -0.8px;
+    }
+
+    .case-subtitle {
+      font-size: 19px;
+      color: #6A6E72;
+      font-style: italic;
+      margin-bottom: 30px;
+    }
+
+    .case-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px;
+    }
+
+    .case-block h4 {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: #1F4E5F;
+      margin: 0 0 8px;
+    }
+
+    .case-block p {
+      font-size: 17px;
+      color: #44484C;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .case-impact {
+      grid-column: 1 / -1;
+      border-top: 1px solid #D9DDDE;
+      padding-top: 25px;
+      margin-top: 5px;
+    }
+
+    .case-impact p {
+      font-size: 20px;
+      font-weight: 600;
+      color: #171717;
+    }
+
+
+    /* =========================
+       HOW I LEAD
+       ========================= */
+
+    .lead-section {
+      background: #F7F7F5;
+    }
+
+    .lead-intro {
+      max-width: 800px;
+      margin-bottom: 55px;
+    }
+
+    .lead-intro p {
+      font-size: 19px;
+      color: #5F6368;
+      margin: 0;
+    }
+
+    .lead-principles {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 35px;
+    }
+
+    .lead-principle {
+      border-top: 2px solid #1F4E5F;
+      padding-top: 20px;
+      width: 100%;
+    }
+
+    .lead-principle h3 {
+      font-size: 22px;
+      margin: 0 0 10px;
+      letter-spacing: -0.3px;
+    }
+
+    .lead-principle p {
+      font-size: 17px;
+      color: #555A5E;
+      margin: 0;
+      line-height: 1.55;
+    }
+
+
+    /* =========================
+       EXPERIENCE HIGHLIGHTS
+       ========================= */
+
+    .experience {
+      background: #FFFFFF;
+    }
+
+    .experience-intro {
+      max-width: 760px;
+      margin-bottom: 50px;
+    }
+
+    .experience-intro p {
+      font-size: 19px;
+      color: #5F6368;
+    }
+
+    .experience-item {
+      padding: 35px 0;
+      border-top: 1px solid #D9DDDE;
+    }
+
+    .experience-item:last-child {
+      border-bottom: 1px solid #D9DDDE;
+    }
+
+    .experience-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 10px;
+    }
+
+    .experience-title {
+      font-size: 23px;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .experience-date {
+      font-size: 15px;
+      color: #6A6E72;
+      white-space: nowrap;
+    }
+
+    .experience-item p {
+      font-size: 17px;
+      color: #555A5E;
+      max-width: 800px;
+      margin: 0;
+    }
+
 
     /* =========================
        EDUCATION
-    ========================= */
+       ========================= */
 
-    .education-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 45px;
-      margin-top: 50px;
+    .education {
+      background: #F7F7F5;
     }
 
-    .education-item {
-      border-top: 1px solid #DCDCD8;
+    .education-card {
+      max-width: 800px;
+      border-top: 2px solid #1F4E5F;
       padding-top: 25px;
     }
 
-    .education-degree {
-      font-size: 20px;
-      font-weight: 700;
-      margin-bottom: 8px;
+    .education-card h3 {
+      font-size: 26px;
+      margin: 0 0 8px;
     }
 
-    .education-school {
-      color: #1F4E5F;
-      font-weight: 600;
-      margin-bottom: 8px;
+    .education-card p {
+      font-size: 18px;
+      color: #5F6368;
+      margin: 5px 0;
     }
 
-    .education-detail {
-      font-size: 15px;
-      color: #666;
-    }
 
     /* =========================
        CONTACT
-    ========================= */
+       ========================= */
 
-    .contact-section {
+    .contact {
+      background: #1F4E5F;
+      color: #FFFFFF;
       text-align: center;
-      padding-bottom: 120px;
     }
 
-    .contact-section p {
+    .contact .section-label {
+      color: #DCE7E9;
+    }
+
+    .contact h2 {
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .contact p {
+      font-size: 19px;
+      color: #DCE7E9;
+      max-width: 600px;
       margin: 0 auto 30px;
     }
 
     .contact-email {
-      color: #1F4E5F;
-      font-size: 19px;
+      display: inline-block;
+      color: #FFFFFF;
+      font-size: 20px;
       font-weight: 600;
       text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.6);
+      padding-bottom: 3px;
     }
 
-    .contact-email:hover {
-      text-decoration: underline;
-    }
 
     /* =========================
        FOOTER
-    ========================= */
+       ========================= */
 
     footer {
-      border-top: 1px solid #E5E5E2;
-      padding: 28px 32px;
-      text-align: center;
+      background: #171717;
+      color: #AEB3B6;
+      padding: 25px 0;
       font-size: 13px;
-      color: #777;
+      text-align: center;
     }
 
+
     /* =========================
-       RESPONSIVE
-    ========================= */
+       MOBILE
+       ========================= */
 
     @media (max-width: 800px) {
 
-      .nav-container {
+      .nav-inner {
+        min-height: auto;
+        padding: 14px 0;
+        align-items: flex-start;
         flex-direction: column;
-        gap: 14px;
+        gap: 10px;
       }
 
       .nav-links {
-        justify-content: center;
-        gap: 14px;
+        justify-content: flex-start;
+        gap: 12px 18px;
+      }
+
+      .nav-links a {
+        font-size: 13px;
       }
 
       .hero {
+        min-height: auto;
+        padding: 70px 0;
+      }
+
+      .hero-grid {
         grid-template-columns: 1fr;
-        text-align: center;
-        padding-top: 80px;
+        gap: 45px;
       }
 
-      .hero-actions {
-        justify-content: center;
+      .hero-photo {
+        max-width: 500px;
       }
 
-      .hero-image {
-        order: -1;
+      .impact-grid {
+        grid-template-columns: 1fr 1fr;
       }
 
-      .hero h1 {
-        font-size: 58px;
+      .case-study {
+        padding: 30px;
       }
 
-      .hero-expertise {
-        font-size: 25px;
-      }
-
-      .solve-grid,
-      .impact-grid,
-      .lead-grid,
-      .education-grid {
+      .case-content {
         grid-template-columns: 1fr;
+        gap: 25px;
       }
 
-      h2 {
-        font-size: 36px;
+      .case-impact {
+        grid-column: auto;
+      }
+
+      .solve-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .lead-principles {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .experience-header {
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      .experience-date {
+        white-space: normal;
       }
 
     }
+
 
     @media (max-width: 500px) {
 
       section {
-        padding: 75px 22px;
+        padding: 70px 0;
       }
 
-      .hero {
-        padding: 65px 22px;
+      .impact-grid {
+        grid-template-columns: 1fr;
       }
 
-      .hero h1 {
-        font-size: 48px;
-        letter-spacing: -2px;
+      .case-study h3 {
+        font-size: 26px;
       }
 
-      .hero-expertise {
-        font-size: 22px;
+      .philosophy-lead {
+        font-size: 26px;
       }
 
-      .impact-number {
-        font-size: 40px;
+      .solve-transfer {
+        font-size: 25px !important;
       }
 
-      .nav-container {
-        padding: 14px 18px;
-      }
-
-      .nav-links {
-        gap: 10px;
-      }
-
-      .nav-links a {
-        font-size: 12px;
+      .solve-keywords {
+        font-size: 20px !important;
       }
 
     }
@@ -535,59 +713,88 @@
   </style>
 </head>
 
+
 <body>
 
+
   <!-- =========================
-       NAVIGATION
-  ========================= -->
+       STICKY NAVIGATION
+       ========================= -->
 
-  <nav>
-    <div class="nav-container">
+  <nav class="site-nav">
 
-      <a href="#top" class="nav-name">
+    <div class="container nav-inner">
+
+      <a class="nav-brand" href="#top">
         Adam Freedman
       </a>
 
-      <ul class="nav-links">
-        <li><a href="#how-i-think">How I Think</a></li>
-        <li><a href="#what-i-solve">What I Solve</a></li>
-        <li><a href="#impact">Impact</a></li>
-        <li><a href="#transformation">Transformation</a></li>
-        <li><a href="#how-i-lead">How I Lead</a></li>
-        <li><a href="#experience">Experience Highlights</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+      <div class="nav-links">
+
+        <a href="#think">
+          How I Think
+        </a>
+
+        <a href="#solve">
+          What I Solve
+        </a>
+
+        <a href="#impact">
+          Impact
+        </a>
+
+        <a href="#transformation">
+          Transformation
+        </a>
+
+        <a href="#lead">
+          How I Lead
+        </a>
+
+        <a href="#experience">
+          Experience Highlights
+        </a>
+
+        <a href="#education">
+          Education
+        </a>
+
+        <a href="#contact">
+          Contact
+        </a>
+
+      </div>
 
     </div>
+
   </nav>
 
 
   <!-- =========================
        HERO
-  ========================= -->
+       ========================= -->
 
-  <main id="top">
+  <header class="hero" id="top">
 
-    <section class="hero">
+    <div class="container hero-grid">
 
-      <div class="hero-content">
+      <div>
 
-        <div class="hero-eyebrow">
-          Operations & Analytics Leader
+        <div class="eyebrow">
+          Operations &amp; Analytics Leader
         </div>
 
         <h1>
           Adam Freedman
         </h1>
 
-        <p class="hero-expertise">
+        <div class="expertise">
           I design decision systems that turn complexity into better decisions and better execution.
-        </p>
+        </div>
 
-        <p class="hero-tagline">
+        <div class="tagline">
           Machine Learning · Transformation · Forecasting · Control Analytics
-        </p>
+        </div>
 
         <div class="hero-actions">
 
@@ -609,20 +816,29 @@
 
       </div>
 
-      <div class="hero-image">
+
+      <div>
+
         <img
+          class="hero-photo"
           src="adam-freedman.png"
           alt="Adam Freedman">
+
       </div>
 
-    </section>
+    </div>
+
+  </header>
 
 
-    <!-- =========================
-         HOW I THINK
-    ========================= -->
 
-    <section id="how-i-think">
+  <!-- =========================
+       HOW I THINK
+       ========================= -->
+
+  <section id="think">
+
+    <div class="container philosophy">
 
       <div class="section-label">
         How I Think
@@ -632,341 +848,605 @@
         Better decisions don’t always require more analytics.
       </h2>
 
-      <div class="think-content">
-
-        <p>
-          Most operational performance problems are not data problems.
-          They’re decision system design problems.
-        </p>
-
-        <p>
-          I start with the business problem, not the analytics. I look at
-          where decisions break down, what information is available, who
-          owns the decision, and what constraints or tradeoffs shape the
-          outcome.
-        </p>
-
-        <p>
-          Sometimes the answer is an advanced model. Sometimes it’s a
-          redesigned process. And sometimes the best solution is removing
-          a step entirely.
-        </p>
-
-        <p class="think-close">
-          The objective isn’t more analytics. It’s better decisions.
-        </p>
-
+      <div class="philosophy-lead">
+        Most operational performance problems are not data problems. They’re decision system design problems.
       </div>
 
-    </section>
+      <p>
+        I start with the business problem, not the technology. I look at where decisions 
+        break down, what information is available, what constraints matter, and what tradeoffs leaders are making.
+      </p>
+
+      <p>
+        Sometimes the answer is an advanced model. Sometimes it’s a redesigned process. 
+        Sometimes it’s removing a step entirely.
+      </p>
+
+      <div class="closing-line">
+        The objective isn’t more analytics. It’s better decisions.
+      </div>
+
+    </div>
+
+  </section>
 
 
-    <!-- =========================
-         WHAT I SOLVE
-    ========================= -->
 
-    <section id="what-i-solve">
+  <!-- =========================
+       WHAT I SOLVE
+       ========================= -->
+
+  <section class="solve-section" id="solve">
+
+    <div class="container">
 
       <div class="section-label">
         What I Solve
       </div>
 
-      <h2>
-        I work on problems where the answer isn’t obvious.
-      </h2>
-
       <div class="solve-intro">
 
-        <p>
-          Competing priorities, uncertain demand, inefficient processes,
-          and decisions that don’t scale. My experience spans forecasting,
-          machine learning, control analytics, reengineering, and
-          operational transformation.
+        <h2>
+          I work on problems where the answer isn’t obvious: competing priorities, 
+          uncertain demand, inefficient processes, and decisions that don’t scale.
+        </h2>
+
+        <p class="solve-context">
+          I’ve applied these approaches across forecasting, machine learning,
+          control analytics, reengineering, and operational transformation.
+          The underlying problems are transferable.
+        </p>
+
+        <p class="solve-keywords">
+          Complexity.  Uncertainty.  Inefficiency.  Misaligned resources.
+        </p>
+
+        <p class="solve-context">
+          These problems exist in every industry. My role is to understand the
+          system, identify what is preventing better outcomes, and design a
+          better way forward.
         </p>
 
       </div>
 
-      <div class="solve-keywords">
-        <span>Complexity</span>
-        <span>Uncertainty</span>
-        <span>Inefficiency</span>
-        <span>Misaligned Resources</span>
-      </div>
 
       <div class="solve-grid">
 
-        <div class="solve-item">
-          <h3>Turn Complexity Into Clarity</h3>
-          <p>
-            Structure complex operational problems so leaders can see
-            the decisions that actually matter.
-          </p>
-        </div>
 
         <div class="solve-item">
-          <h3>Redesign Before Automating</h3>
+
+          <h3>
+            Turn Complexity Into Clarity
+          </h3>
+
           <p>
-            Challenge unnecessary complexity before investing in
-            technology or automation.
+            Break down complex problems into the decisions, constraints, and tradeoffs that matter.
           </p>
+
         </div>
 
-        <div class="solve-item">
-          <h3>Build Scalable Decision Systems</h3>
-          <p>
-            Turn analytical capabilities into repeatable systems that
-            can operate at enterprise scale.
-          </p>
-        </div>
 
         <div class="solve-item">
-          <h3>Turn Strategy Into Execution</h3>
+
+          <h3>
+            Redesign Before Automating
+          </h3>
+
           <p>
-            Connect strategic objectives to the operating decisions,
-            resources, and processes required to deliver them.
+            Challenge the process before automating it. Remove unnecessary complexity before adding technology.
           </p>
+
         </div>
+
+
+        <div class="solve-item">
+
+          <h3>
+            Build Scalable Decision Systems
+          </h3>
+
+          <p>
+            Turn analytical capabilities into repeatable processes that support decisions at scale.
+          </p>
+
+        </div>
+
+
+        <div class="solve-item">
+
+          <h3>
+            Turn Strategy Into Execution
+          </h3>
+
+          <p>
+            Translate strategic priorities into operating decisions, measurable outcomes, and action.
+          </p>
+
+        </div>
+
 
       </div>
 
-    </section>
+    </div>
+
+  </section>
 
 
-    <!-- =========================
-         IMPACT
-    ========================= -->
 
-    <section id="impact">
+  <!-- =========================
+
+       IMPACT HIGHLIGHTS
+
+       ========================= -->
+
+  <section class="impact" id="impact">
+
+    <div class="container">
 
       <div class="section-label">
-        Impact
+
+        Impact Highlights
+
       </div>
 
-      <h2>
-        Measurable results at enterprise scale.
-      </h2>
+      <div class="impact-intro">
+
+        <h2>
+
+          Measurable outcomes at scale.
+
+        </h2>
+
+      </div>
 
       <div class="impact-grid">
 
-        <div>
-          <div class="impact-number">$850M</div>
+        <div class="impact-item">
+
+          <div class="impact-number">
+
+            $850M
+
+          </div>
+
           <div class="impact-description">
+
             Annual OPEX supported through forecasting
+
           </div>
-          <span class="impact-source">
-            Amex — Global Forecasting
-          </span>
+
+          <div class="impact-context">
+
+            American Express — Global Forecasting
+
+          </div>
+
         </div>
 
-        <div>
-          <div class="impact-number">55M</div>
+        <div class="impact-item">
+
+          <div class="impact-number">
+
+            55M
+
+          </div>
+
           <div class="impact-description">
+
             Annual demand units forecasted
+
           </div>
-          <span class="impact-source">
-            Amex — Global Forecasting
-          </span>
+
+          <div class="impact-context">
+
+            American Express — Global Forecasting
+
+          </div>
+
         </div>
 
-        <div>
-          <div class="impact-number">600+</div>
+        <div class="impact-item">
+
+          <div class="impact-number">
+
+            600+
+
+          </div>
+
           <div class="impact-description">
+
             Regulatory and procedural monitoring tests managed
+
           </div>
-          <span class="impact-source">
-            Amex — Control Management
-          </span>
+
+          <div class="impact-context">
+
+            American Express — Control Management
+
+          </div>
+
         </div>
 
-        <div>
-          <div class="impact-number">500+</div>
+        <div class="impact-item">
+
+          <div class="impact-number">
+
+            500+
+
+          </div>
+
           <div class="impact-description">
+
             Hours of monthly resource effort eliminated
+
           </div>
-          <span class="impact-source">
+
+          <div class="impact-context">
+
             Multiple leadership roles
-          </span>
+
+          </div>
+
         </div>
 
-        <div>
-          <div class="impact-number">43</div>
-          <div class="impact-description">
-            Machine learning models deployed in 12 months
+        <div class="impact-item">
+
+          <div class="impact-number">
+
+            43
+
           </div>
-          <span class="impact-source">
-            Amex — Forecasting & ML CoE
-          </span>
+
+          <div class="impact-description">
+
+            Machine learning models deployed in the 12 months
+
+          </div>
+
+          <div class="impact-context">
+
+            American Express — Forecasting &amp; Machine Learning Center of Excellence
+
+          </div>
+
         </div>
 
       </div>
 
-    </section>
+    </div>
+
+  </section>
 
 
-    <!-- =========================
-         TRANSFORMATION
-    ========================= -->
+  <!-- =========================
+       TRANSFORMATION IN ACTION
+       ========================= -->
 
-    <section id="transformation">
+  <section class="transformation" id="transformation">
+
+    <div class="container">
 
       <div class="section-label">
         Transformation in Action
       </div>
 
-      <h2>
-        Turning better decisions into better outcomes.
-      </h2>
+      <div class="section-intro">
 
-
-      <div class="case-study">
-
-        <div class="case-number">
-          Case 01
-        </div>
-
-        <h3>
-          From Proof of Concept to Enterprise Capability
-        </h3>
-
-        <p>
-          Forecasting variability created an opportunity to test machine
-          learning across the UK and Mexico. The initial proof of concept
-          demonstrated value and became the foundation for a broader
-          Machine Learning Center of Excellence.
-        </p>
-
-        <p class="case-result">
-          43 models deployed in the first 12 months.
-        </p>
+        <h2>
+          How I turn complex operational problems into better decisions and simpler ways of working.
+        </h2>
 
       </div>
 
 
-      <div class="case-study">
+
+      <!-- CASE STUDY 1 -->
+
+      <article class="case-study">
 
         <div class="case-number">
-          Case 02
+          01 — From Proof of Concept to Enterprise Capability
         </div>
 
         <h3>
-          Simplifying Before Automating
+          Turning forecasting variability into a scalable decision capability with a machine learning foundation
         </h3>
 
-        <p>
-          A process step had been added over time and was creating
-          unnecessary complexity. Rather than automate the existing
-          process, I challenged whether the step was needed at all.
-        </p>
-
-        <p class="case-result">
-          The step was eliminated, removing 35 monthly hours of work.
-          It was one of several redesigns contributing to more than
-          500 hours of monthly effort reduction.
-        </p>
-
-      </div>
+        <div class="case-subtitle">
+          From a focused proof of concept to an enterprise capability.
+        </div>
 
 
-      <div class="case-study">
+        <div class="case-content">
+
+
+          <div class="case-block">
+
+            <h4>
+              Challenge
+            </h4>
+
+            <p>
+              Forecasting performance varied significantly across domains, creating inconsistent decisions and operational challenges.
+            </p>
+
+          </div>
+
+
+          <div class="case-block">
+
+            <h4>
+              Approach
+            </h4>
+
+            <p>
+              I led a machine learning proof of concept across the UK and Mexico, 
+              focusing on an approach that could be deployed, evaluated, and maintained at scale.
+            </p>
+
+          </div>
+
+
+          <div class="case-block case-impact">
+
+            <h4>
+              Impact
+            </h4>
+
+            <p>
+              The success expanded into a Machine Learning Center of Excellence that deployed
+              <strong>43 models in its first 12 months.</strong>
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </article>
+
+
+
+      <!-- CASE STUDY 2 -->
+
+      <article class="case-study">
 
         <div class="case-number">
-          Case 03
+          02 — Simplifying Before Automating
         </div>
 
         <h3>
-          Deciding with Imperfect Information
+          Removing complexity instead of automating it
         </h3>
 
-        <p>
-          Conflicting forecasting drivers created uncertainty around
-          resource requirements. Rather than wait for perfect information,
-          I aligned stakeholders around the best available forecast and
-          established a path to reforecast as conditions changed.
-        </p>
-
-        <p class="case-result">
-          The decision ultimately supported approximately 30 incremental
-          FTE and $2M in incremental operating expense.
-        </p>
-
-      </div>
-
-    </section>
+        <div class="case-subtitle">
+          Sometimes the best transformation is removing something that doesn’t add value.
+        </div>
 
 
-    <!-- =========================
-         HOW I LEAD
-    ========================= -->
+        <div class="case-content">
 
-    <section id="how-i-lead">
+
+          <div class="case-block">
+
+            <h4>
+              Challenge
+            </h4>
+
+            <p>
+              A process was being prepared for automation, but one existing
+              step would have added unnecessary complexity.
+            </p>
+
+          </div>
+
+
+          <div class="case-block">
+
+            <h4>
+              Approach
+            </h4>
+
+            <p>
+              Rather than automate the existing process as is, I challenged
+              whether the step created enough value to justify keeping it.
+            </p>
+
+          </div>
+
+
+          <div class="case-block case-impact">
+
+            <h4>
+              Impact
+            </h4>
+
+            <p>
+              <strong>Eliminated 35 hours of monthly effort</strong> in this process, one of several redesigns 
+              contributing to more than 500 hours of monthly effort reduction.
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </article>
+
+
+
+      <!-- CASE STUDY 3 -->
+
+      <article class="case-study">
+
+        <div class="case-number">
+          03 — Deciding with Imperfect Information
+        </div>
+
+        <h3>
+          Making the best decision with the information available
+        </h3>
+
+        <div class="case-subtitle">
+          Good decisions do not require perfect information.
+        </div>
+
+
+        <div class="case-content">
+
+
+          <div class="case-block">
+
+            <h4>
+              Challenge
+            </h4>
+
+            <p>
+              Forecasting drivers were inconsistent and conflicting during
+              an annual planning cycle.
+            </p>
+
+          </div>
+
+
+          <div class="case-block">
+
+            <h4>
+              Approach
+            </h4>
+
+            <p>
+              I aligned stakeholders around the best forecast supported by
+              the information available at the time. When the underlying
+              drivers became clearer three months later, I communicated the
+              implications and recommended a re-forecast.
+            </p>
+
+          </div>
+
+
+          <div class="case-block case-impact">
+
+            <h4>
+              Impact
+            </h4>
+
+            <p>
+              The updated forecast identified approximately
+              <strong>30 incremental FTE and $2M in incremental operating expense.</strong>
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       HOW I LEAD
+       ========================= -->
+
+  <section class="lead-section" id="lead">
+
+    <div class="container">
 
       <div class="section-label">
         How I Lead
       </div>
 
-      <h2>
-        Create clarity. Earn trust. Build followership.
-      </h2>
 
-      <p class="lead-intro">
-        I’ve led teams ranging from 2 to 30 people across analytics,
-        forecasting, machine learning, and operational functions.
-      </p>
+      <div class="lead-intro">
 
-      <div class="lead-grid">
+        <h2>
+          Create clarity. Earn trust. Build followership.
+        </h2>
 
-        <div class="lead-item">
-          <div class="lead-number">01</div>
-          <h3>Create Clarity</h3>
+        <p>
+          I’ve led teams ranging from 2 to 30, and my leadership approach remains consistent 
+          regardless of team size or complexity.
+        </p>
+
+      </div>
+
+
+      <div class="lead-principles">
+
+        <div class="lead-principle">
+
+          <h3>
+            Create Clarity
+          </h3>
+
           <p>
-            Establish clear priorities, ownership, and expectations so
-            teams understand what matters and how success will be measured.
+            Connect the work to the outcome so people know what matters and where to focus.
           </p>
+
         </div>
 
-        <div class="lead-item">
-          <div class="lead-number">02</div>
-          <h3>Earn Trust</h3>
+
+        <div class="lead-principle">
+
+          <h3>
+            Earn Trust
+          </h3>
+
           <p>
-            Build credibility through transparency, sound judgment,
-            consistency, and accountability.
+            Be transparent about decisions, tradeoffs, and what needs to change.
           </p>
+
         </div>
 
-        <div class="lead-item">
-          <div class="lead-number">03</div>
-          <h3>Build Followership</h3>
+
+        <div class="lead-principle">
+
+          <h3>
+            Build Followership
+          </h3>
+
           <p>
-            Create the conditions where people understand the mission,
-            believe in the direction, and want to contribute.
+            Create alignment around a clear vision and roadmap so people choose 
+            to move with the organization, not simply because they’re directed to.
           </p>
+
         </div>
 
       </div>
 
-    </section>
+    </div>
+
+  </section>
 
 
-    <!-- =========================
-         EXPERIENCE
-    ========================= -->
 
-    <section id="experience">
+  <!-- =========================
+       EXPERIENCE HIGHLIGHTS
+       ========================= -->
+
+  <section class="experience" id="experience">
+
+    <div class="container">
 
       <div class="section-label">
         Experience Highlights
       </div>
 
-      <h2>
-        A career built around better decisions.
-      </h2>
-
       <div class="experience-intro">
 
+        <h2>
+          A career built around better decisions.
+        </h2>
+
         <p>
-          My experience spans forecasting, machine learning, control
-          analytics, and operational transformation. I use analytics
-          and process redesign to improve decisions and execution.
+          My experience spans forecasting, machine learning, control analytics, and operational transformation. I use
+          analytics and process redesign to improve decisions and execution.
         </p>
 
       </div>
@@ -974,18 +1454,21 @@
 
       <div class="experience-item">
 
-        <div class="experience-role">
-          Director, MIS Reporting & Analytics — Control Management
-        </div>
+        <div class="experience-header">
 
-        <div class="experience-company">
-          American Express
+          <h3 class="experience-title">
+            Director, MIS Reporting &amp; Analytics — Control Management
+          </h3>
+
+          <div class="experience-date">
+            American Express
+          </div>
+
         </div>
 
         <p>
-          Lead reporting, control analytics, monitoring, and decision
-          support, including management of more than 600 regulatory and
-          procedural monitoring tests.
+          Lead reporting, control analytics, monitoring, and decision support activities 
+          across a global organization, including 600+ regulatory and procedural monitoring tests.
         </p>
 
       </div>
@@ -993,17 +1476,21 @@
 
       <div class="experience-item">
 
-        <div class="experience-role">
-          Director, Global Forecasting and Business Planning Leadership
-        </div>
+        <div class="experience-header">
 
-        <div class="experience-company">
-          American Express
+          <h3 class="experience-title">
+            Director, Global Forecasting and Business Planning Leadership
+          </h3>
+
+          <div class="experience-date">
+            American Express
+          </div>
+
         </div>
 
         <p>
-          Led global forecasting supporting approximately $850M in annual
-          operating expense and 55M annual demand units.
+          Led global forecasting supporting $850M in annual OPEX and 55M annual demand units, 
+          with a focus on improving forecast quality and decision-making.
         </p>
 
       </div>
@@ -1011,97 +1498,106 @@
 
       <div class="experience-item">
 
-        <div class="experience-role">
-          Machine Learning Center of Excellence
-        </div>
+        <div class="experience-header">
 
-        <div class="experience-company">
-          American Express
+          <h3 class="experience-title">
+            Machine Learning Center of Excellence
+          </h3>
+
+          <div class="experience-date">
+            American Express
+          </div>
+
         </div>
 
         <p>
-          Built the capability from scratch and deployed 43 machine
-          learning models in the first 12 months.
+          Built a Machine Learning Center of Excellence from scratch, deploying 43 models in its first 
+          12 months and establishing a scalable foundation for machine learning across multiple domains.
         </p>
 
       </div>
 
-    </section>
+
+    </div>
+
+  </section>
 
 
-    <!-- =========================
-         EDUCATION
-    ========================= -->
 
-    <section id="education">
+  <!-- =========================
+       EDUCATION
+       ========================= -->
+
+  <section class="education" id="education">
+
+    <div class="container">
 
       <div class="section-label">
         Education
       </div>
 
       <h2>
-        Continuous learning is part of the work.
+        Continuous learning.
       </h2>
 
-      <div class="education-grid">
 
-        <div class="education-item">
+      <div class="education-card">
 
-          <div class="education-degree">
-            MS Analytics
-          </div>
+        <h3>
+          Master of Science in Analytics - Expected December 2026
+        </h3>
 
-          <div class="education-school">
-            Georgia Institute of Technology
-          </div>
+        <p>
+          Georgia Institute of Technology
+        </p>
 
-          <div class="education-detail">
-            Expected December 2026<br>
-            Focus: Analytical Tools
-          </div>
-
-        </div>
-
-
-        <div class="education-item">
-
-          <div class="education-degree">
-            Data Science Bootcamp
-          </div>
-
-          <div class="education-school">
-            Georgia Institute of Technology
-          </div>
-
-        </div>
-
-
-        <div class="education-item">
-
-          <div class="education-degree">
-            BS Business Administration
-          </div>
-
-          <div class="education-school">
-            University of Florida
-          </div>
-
-          <div class="education-detail">
-            Focus: Economics
-          </div>
-
-        </div>
+        <p>
+          Focus: Analytical Tools
+        </p>
 
       </div>
 
-    </section>
+      <div class="education-card">
+
+        <h3>
+          Data Science Bootcamp
+        </h3>
+
+        <p>
+          Georgia Institute of Technology
+        </p>
+
+      </div>
+
+      <div class="education-card">
+
+        <h3>
+          Bachelor of Science in Business Administration
+        </h3>
+
+        <p>
+          University of Florida
+        </p>
+
+        <p>
+          Focus: Economics
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
 
 
-    <!-- =========================
-         CONTACT
-    ========================= -->
 
-    <section id="contact" class="contact-section">
+  <!-- =========================
+       CONTACT
+       ========================= -->
+
+  <section class="contact" id="contact">
+
+    <div class="container">
 
       <div class="section-label">
         Contact
@@ -1112,8 +1608,8 @@
       </h2>
 
       <p>
-        I’m always open to conversations around operations, analytics,
-        transformation, leadership, and building better decision systems.
+        I’m interested in conversations about operations, analytics,
+        transformation, leadership, and the design of better decision systems.
       </p>
 
       <a
@@ -1122,18 +1618,24 @@
         adam@adamfreedman.page
       </a>
 
-    </section>
+    </div>
 
-  </main>
+  </section>
+
 
 
   <!-- =========================
        FOOTER
-  ========================= -->
+       ========================= -->
 
   <footer>
-    Adam Freedman · Operations & Analytics Leader
+
+    <div class="container">
+      Adam Freedman &nbsp;·&nbsp; Operations &amp; Analytics Leader
+    </div>
+
   </footer>
+
 
 </body>
 </html>
